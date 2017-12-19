@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Student Admin</title>
+    <script src="../libs/angular.min.js"></script>
+    <script src="../libs/ngStorage.min.js"></script>
+    <script src="../js/app1.js"></script>
+    <script src="../factory/student_f.js"></script>
+    <script src="../controller/student.js"></script>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+<!--    <link href="css/sb-admin.css" rel="stylesheet">-->
+
+    <!-- Morris Charts CSS -->
+    <link href="../stylesheet/main1.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body ng-app="myapp1" ng-controller="student">
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                
+                <a class="navbar-brand" href="#" >Question Rounds</a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu message-dropdown">
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>{{name}}</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>{{name}}</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-preview">
+                            <a href="#">
+                                <div class="media">
+                                    <span class="pull-left">
+                                        <img class="media-object" src="http://placehold.it/50x50" alt="">
+                                    </span>
+                                    <div class="media-body">
+                                        <h5 class="media-heading"><strong>{{name}}</strong>
+                                        </h5>
+                                        <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
+                                        <p>Lorem ipsum dolor sit amet, consectetur...</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="message-footer">
+                            <a href="#">Read All New Messages</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i> <b class="caret"></b></a>
+                    <ul class="dropdown-menu alert-dropdown">
+                        <li>
+                            <a href="#">Alert Name <span class="label label-default">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-primary">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-success">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-info">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-warning">Alert Badge</span></a>
+                        </li>
+                        <li>
+                            <a href="#">Alert Name <span class="label label-danger">Alert Badge</span></a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">View All</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{name}} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="../index.html"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li class="active">
+                        <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-list"></i> Final Score</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+
+        <div id="page-wrapper">
+
+         <h1 style="text-align:center">Welcome <mark>{{name}}</mark></h1>
+                   
+                <br><br>
+                <div id="questions">
+                <button class="circle" ng-class="{'red':test==1 || test == 2 || test == 3 || test == 4}">Question 1</button> 
+                <button class="circle" ng-class="{'red':test==2 || test == 3 || test == 4}">Question 2</button>
+                <button class="circle" ng-class="{'red':test==3 || test == 4}">Question 3</button>
+                <button class="circle" ng-class={'red':test==4}>Question 4</button>
+                </div>
+                <br><br>
+        <button ng-click="start()" class="btn btn-primary" style="width:100%">Start</button>
+        <br><br>
+       <div ng-repeat="question in questions" class="quest_block" ng-show="visible==question.questionNo">
+           <table border="1" class=".table" style="width:100%;font-size:20px">
+               <tr class="bg-info">
+                   <th colspan="2">{{question.question}}</th>
+               </tr>
+               <tr>
+                   <td class="bg-danger">{{question.op1}}  <input type="radio" name="select{{question.questionNo}}" ng-click="toggleSelection($event)" value="{{question.op1}}"></td>
+                   <td class="bg-warning">{{question.op2}}  <input type="radio" name="select{{question.questionNo}}" ng-click="toggleSelection($event)" value="{{question.op2}}"></td>
+                   
+               </tr>
+                  <tr>
+                   <td class="bg-warning">{{question.op3}}  <input type="radio" name="select{{question.questionNo}}" ng-click="toggleSelection($event)" value="{{question.op3}}" ></td>
+                   <td class="bg-danger">{{question.op4}}  <input type="radio" name="select{{question.questionNo}}" ng-click="toggleSelection($event)" value="{{question.op4}}"></td>
+                   
+               </tr>
+               
+           </table>
+           <br><br>
+           <div>
+           <button class="btn btn-primary" style="width:40%; margin-left:10%" ng-click="next(question.questionNo)">next</button>
+           <button class="btn btn-primary"  style="width:40%">Previous</button>
+           </div>
+       </div>
+       
+       <button ng-hide="submitAns" ng-click="compute()" class="btn btn-default" style="width:50%;margin-left:26%">Submit Answers</button>
+       
+       <h3 style="text-align:center" ng-show="showScore">You Scored: {{correct}}</h3>
+       <br><br>
+       <button ng-click="showMistakes()" ng-show="showScore">Show Mistakes</button>
+       <br>
+       <h3 style="text-align:center" ng-show="showMistake">{{string}}</h3>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br> <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+   
+
+</body>
